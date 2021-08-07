@@ -1,3 +1,6 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% calculates part of mass matrix
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function Vlm = calc_Vlm(dcd, l, m, kappa)
 nl = dcd(l).n;
 nm = dcd(m).n;
