@@ -1,3 +1,6 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Function to interpolate onto quad mesh
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function [zs, err] = cauchy_data_onto_quad_mesh(qm, dcd, kappa, u, gap)
     r = numel(dcd);
     zs = zeros(1, size(qm.vs, 2));
