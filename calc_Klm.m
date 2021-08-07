@@ -1,3 +1,6 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% calculates part of stiffness matrix
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function Klm = calc_Klm(dcd, l, m, kappa)
 nl = dcd(l).n;
 nm = dcd(m).n; 
@@ -8,26 +11,7 @@ gammasl = dcd(l).gammas;
 gammasm = dcd(m).gammas;
 ngammasm = dcd(m).ngammas;
 normdgammasm = dcd(m).normdgammas;
-% 
-% for i =0:nm-1
-%     Klm(:,i+1) = 1/nm*(gammasl - gammasm(:,i+1))'*ngammasm(:,i+1)*normdgammasm(i+1)./(2*pi*((gammasl(1,:) - gammasm(1,i+1)).^2 + (gammasl(2,:) - gammasm(2,i+1)).^2)');
-%     
-%  end
-% 
-% if l == m
-%     for i = 0:nm-1
-%         Klm(i+1,i+1) = 1/nm*dcd(m).d2gammas(:,i+1)'*ngammasm(:,i+1)/(4*pi*normdgammasm(i+1));
-%     end
-%     Klm = Klm + 1/2* eye(nl);
-% end
 
-
-
-
-% for i =0:n-1
-%    K(:,i+1) = 1/n*(sbp.gamma(t)-sbp.gamma(i/n))'*sbp.ngamma(i/n)*norm(sbp.dgamma(i/n))./(2*pi*vecnorm(sbp.gamma(t)-sbp.gamma(i/n)).^2)';
-%    K(i+1,i+1) = 1/n*sbp.d2gamma(i/n)'*sbp.ngamma(i/n)/(4*pi*norm(sbp.dgamma(i/n)));
-% end
 
 if l ~= m
     
